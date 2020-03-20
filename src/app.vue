@@ -1,6 +1,6 @@
 <template>
   <div id="test">
-    {{test}}
+    <!-- {{test}} -->
   </div>
 </template>
 
@@ -8,14 +8,15 @@
 export default {
   data (){
     return {
-      text: 'av'
+      // test: 'YYYYKKKKKKKKKKKKKK'
     }
   }
 }
 </script>
 
 <style>
-#test{
+/* #test{
   font-size: 30px;
-} 
+  transform: translateX(30px);
+}  */
 </style>
