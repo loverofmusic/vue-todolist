@@ -29,9 +29,19 @@ const config = {
       {
         test: /\.styl(us)?$/,
         use: [
-          'vue-style-loader',
-          'css-loader',
-          'stylus-loader'
+          "vue-style-loader",
+          "css-loader",
+          { 
+            loader: 'postcss-loader', 
+            options: { sourceMap: true } 
+          },
+          {
+            loader: "px2rem-loader",
+            options: {
+              remUnit: 75 //设计稿宽度/10
+            }
+          },
+          "stylus-loader"
         ]
       },
       {
@@ -53,8 +63,8 @@ const config = {
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: "template.html",
-      inject: true
+      template: "template.html"
+      // inject: true
     }),
     new webpack.DefinePlugin({
       "process.env": {
