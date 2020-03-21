@@ -16,7 +16,7 @@ const config = {
     rules: [
       {
         test: /\.vue$/,
-        loader: "vue-loader"
+        use: ["vue-loader"]
       },
       {
         test: /\.jsx$/,
@@ -24,20 +24,14 @@ const config = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: ["vue-style-loader", "css-loader"]
       },
       {
-        test: /\.styl$/,
+        test: /\.styl(us)?$/,
         use: [
-          "style-loader",
-          "css-loader",
-          {
-            loader: "postcss-loader",
-            options: {
-              sourceMap: true
-            }
-          },
-          "stylus-loader"
+          'vue-style-loader',
+          'css-loader',
+          'stylus-loader'
         ]
       },
       {
@@ -57,7 +51,11 @@ const config = {
   plugins: [
     // make sure to include the plugin for the magic
     new VueLoaderPlugin(),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      filename: "index.html",
+      template: "template.html",
+      inject: true
+    }),
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV: isDev ? '"development"' : '"production"'
