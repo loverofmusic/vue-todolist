@@ -7,32 +7,43 @@
       placeholder="接下去要做什么？"
       @keyup.enter="addTodo"
     />
-    <Item :todo="todo"></Item>
+    <Item :todo="t" v-for="t in todos" :key="t.id" @del="deleteTodo" />
     <Tab :filter="filter"></Tab>
   </section>
 </template>
 
 <script>
-import Item from './item.vue';
-import Tab from './tab.vue';
-
+import Item from "./item.vue";
+import Tab from "./tab.vue";
+let id = 0;
 export default {
   components: {
     Item,
     Tab
   },
-  data (){
+  data() {
     return {
-      todo: {
-        id: 0,
-        content: 'this is todo',
-        completed: false
-      },
-      filter: "all"
-    }
+      filter: "all",
+      todos: []
+    };
   },
   methods: {
-    addTodo() {}
+    addTodo(e) {
+      // console.log(e.target.value)
+      this.todos.unshift({
+        id: id++,
+        content: e.target.value,
+        completed: false
+      });
+      e.target.value = "";
+    },
+    deleteTodo(id) {
+      // alert(id)
+      this.todos.splice(
+        this.todos.findIndex(t => t.id === id),
+        1
+      );
+    }
   }
 };
 </script>
@@ -64,4 +75,3 @@ export default {
     border none
     border-radius 0
 </style>
-

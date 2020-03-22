@@ -5,7 +5,7 @@
     v-model="todo.completed"
     >
     <label for="">{{todo.content}}</label>
-    <button class="destroy" @click="deleteTodo"></button>
+    <button class="destroy" @click="clickDelete(todo.id)"></button>
   </div>
 </template>
 
@@ -18,7 +18,9 @@ export default {
     }
   },
   methods: {
-    deleteTodo(){}
+    clickDelete(id){
+      this.$emit('del', id)
+    }
   }
 };
 </script>
@@ -29,9 +31,11 @@ export default {
         background-color #fff
         font-size 38px
         border-top 1px solid rgba(0,0,0,0.06);/* no */
-        &:hover
-            .destory:after
-                content 'x'            
+        // &:hover
+        .destroy:after
+          content 'x' 
+          font-size 60px
+
         label
             white-space pre-line
             word-break break-all
@@ -66,8 +70,8 @@ export default {
         top 0
         right 10px
         bottom 0
-        width 40px
-        height 40px
+        // width 40px
+        // height 40px
         margin auto 0
         font-size 30px
         color #cc9a9a
