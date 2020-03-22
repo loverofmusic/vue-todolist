@@ -24,7 +24,20 @@ const config = {
       },
       {
         test: /\.css$/,
-        use: ["vue-style-loader", "css-loader"]
+        use: [
+          "vue-style-loader",
+          "css-loader",
+          { 
+            loader: 'postcss-loader', 
+            options: { sourceMap: true } 
+          },
+          {
+            loader: "px2rem-loader",
+            options: {
+              remUnit: 75 //设计稿宽度/10
+            }
+          }
+        ]
       },
       {
         test: /\.styl(us)?$/,

@@ -8,15 +8,18 @@
       @keyup.enter="addTodo"
     />
     <Item :todo="todo"></Item>
+    <Tab :filter="filter"></Tab>
   </section>
 </template>
 
 <script>
 import Item from './item.vue';
+import Tab from './tab.vue';
 
 export default {
   components: {
-    Item
+    Item,
+    Tab
   },
   data (){
     return {
@@ -24,7 +27,8 @@ export default {
         id: 0,
         content: 'this is todo',
         completed: false
-      }
+      },
+      filter: "all"
     }
   },
   methods: {
@@ -39,7 +43,7 @@ export default {
     margin 0 auto
     box-shadow 0 0 5px #666
     // border-radius 8px;/* no */
-
+    // box-shadow inset 0 -2px 1px rgba(0, 0, 0, 0.03)
 .add-input
     position relative
     margin 0
@@ -58,7 +62,6 @@ export default {
     // line-height 100px
     // padding-left 80px
     border none
-    box-shadow inset 0 -2px 1px rgba(0, 0, 0, 0.03)
     border-radius 0
 </style>
 
