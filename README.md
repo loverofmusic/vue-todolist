@@ -1,2 +1,4 @@
 # vue-todolist
-vue+webpack4.0
+vue2.0 + webpack4.0 打造 todolist 应用
+
+
