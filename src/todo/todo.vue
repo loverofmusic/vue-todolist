@@ -8,7 +8,12 @@
       @keyup.enter="addTodo"
     />
     <Item :todo="t" v-for="t in filteredTodos" :key="t.id" @del="deleteTodo" />
-    <Tab :filter="filter" :todoLists="todos" @toggle="toggleFilter"></Tab>
+    <Tab
+      :filter="filter"
+      :todoLists="todos"
+      @toggle="toggleFilter"
+      @clear="clearAllCompleted"
+    ></Tab>
   </section>
 </template>
 
@@ -57,6 +62,10 @@ export default {
     },
     toggleFilter(state) {
       this.filter = state;
+    },
+    clearAllCompleted() {
+      // console.log(this.todos);
+      this.todos = this.todos.filter(t => !t.completed);
     }
   }
 };

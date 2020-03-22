@@ -1,6 +1,6 @@
 <template>
   <div class="helper">
-    <div class="left">{{unFinishedTodoLength}} items left</div>
+    <div class="left">{{ unFinishedTodoLength }} items left</div>
     <div class="tabs">
       <span
         v-for="state in states"
@@ -11,7 +11,7 @@
         {{ state }}
       </span>
     </div>
-    <div class="clear" @click="clearAllCompleted">Clear Completed</div>
+    <div class="clear" @click="clearCompleted">Clear Completed</div>
   </div>
 </template>
 
@@ -30,18 +30,19 @@ export default {
   data() {
     return {
       states: ["all", "active", "completed"]
-      
     };
   },
   computed: {
-    unFinishedTodoLength(){
-      return this.todoLists.filter(t=>!t.completed).length
+    unFinishedTodoLength() {
+      return this.todoLists.filter(t => !t.completed).length;
     }
   },
   methods: {
-    clearAllCompleted() {},
     clickToggle(state) {
-      this.$emit('toggle', state)
+      this.$emit("toggle", state);
+    },
+    clearCompleted() {
+      this.$emit('clear')
     }
   }
 };
