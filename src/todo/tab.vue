@@ -54,12 +54,9 @@ export default {
     display flex
     justify-content space-between
     padding 30px 0
-    // line-height 30px
     background-color #ffffff
     font-size 28px
-    // font-smoothing antialiased
     
-
 .left, .clear, .tabs
     padding 0 10px
 .left .clear
@@ -70,7 +67,6 @@ export default {
     text-align right
     cursor pointer
 .tabs
-    // width 200px
     display flex
     justify-content space-between
     *

@@ -73,16 +73,16 @@ export default {
 
 <style lang="stylus" scoped>
 .real-app
-  flex 1
-  width 680px
+    flex 1
+    width 680px
 .add-input
-  width 100%
-  font-size 40px
-  outline none
-  box-sizing border-box
-  padding 30px 16px 30px 100px
-  border 0
-  margin 0
-  border-radius 0
-  border-bottom 1px solid #ddd;/* no */  
+    width 100%
+    font-size 40px
+    outline none
+    box-sizing border-box
+    padding 30px 16px 30px 100px
+    border 0
+    margin 0
+    border-radius 0
+    border-bottom 1px solid #ddd;/* no */  
 </style>
