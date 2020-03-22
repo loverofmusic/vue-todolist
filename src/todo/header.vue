@@ -3,14 +3,14 @@
 </template>
 
 <style lang="stylus" scoped>
-.main-header{
-  text-align center
-  h1{
+.main-header
+  h1
     font-size 100px
     color #16a085
     opacity 0.8
     font-weight bold
-    margin 40px
-  }
-}
+    height 100px
+    display flex
+    align-items center
+
 </style>

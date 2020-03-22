@@ -54,11 +54,11 @@ export default {
     display flex
     justify-content space-between
     padding 30px 0
-    line-height 30px
+    // line-height 30px
     background-color #ffffff
     font-size 28px
-    font-smoothing antialiased
-    border-top 1px solid rgba(0,0,0,0.06);/* no */
+    // font-smoothing antialiased
+    
 
 .left, .clear, .tabs
     padding 0 10px

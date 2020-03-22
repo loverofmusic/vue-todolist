@@ -27,59 +27,58 @@ export default {
 
 <style lang="stylus" scoped>
 .todo-item
-        position relative
+        display flex
+        flex-direction row
+        align-items center
+        height 90px
         background-color #fff
         font-size 38px
-        border-top 1px solid rgba(0,0,0,0.06);/* no */
-        // &:hover
-        .destroy:after
-          content 'x' 
-          font-size 60px
+        border-bottom 1px solid #eee;/* no */    
+        
 
         label
             white-space pre-line
             word-break break-all
-            // padding 16px 16px 16px 36px
-            height 90px
-            line-height 90px
-            padding-left 80px
-            display block
             transition color 0.4s
+            margin-left 20px
+            margin-right auto
         &.completed
             label
                 color #d9d9d9
                 text-decoration line-through
     .toggle
-        text-align center
-        width 50px
-        height 60px
-        position absolute
-        top 0
-        bottom 0
-        margin auto 10px
+        width 70px
+        display flex
+        height 100%
+        // line-height 100%
+        margin 0
+        align-items center
+        margin 0 0px 0 10px
         border none
         appearance none
         outline none
-        &:after
-            content url('../assets/images/unChecked.svg')
+        background url('../assets/images/round.svg') 0px 10px no-repeat
+        background-size contain
+        
 
-        &:checked:after
-            content url('../assets/images/checked.svg')
+        &:checked
+            background url('../assets/images/done.svg') 0px 10px no-repeat
+            background-size contain
+            // content url('../assets/images/done.svg')
     .destroy
-        position absolute
-        top 0
-        right 10px
-        bottom 0
-        // width 40px
-        // height 40px
-        margin auto 0
-        font-size 30px
-        color #cc9a9a
-        margin-bottom 11px
-        transition color 0.2s ease-out
+        display flex
+        align-items center
+        padding-right 20px
+        color #cc9a9a        
         background-color transparent
         appearance none
         border-width 0
         cursor pointer
         outline none
+        &:after 
+            // display block
+            // margin -6px 20px 0 0
+            font-size 46px
+            content 'x' 
+            
 </style>

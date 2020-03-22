@@ -73,28 +73,16 @@ export default {
 
 <style lang="stylus" scoped>
 .real-app
-    width 680px
-    margin 0 auto
-    box-shadow 0 0 5px #666
-    // border-radius 8px;/* no */
-    // box-shadow inset 0 -2px 1px rgba(0, 0, 0, 0.03)
+  flex 1
+  width 680px
 .add-input
-    position relative
-    margin 0
-    width 100%
-    font-size 40px
-    font-family inherit
-    font-weight inherit
-    // line-height 1.4em
-    border none
-    outline none
-    color inherit
-    box-sizing border-box
-    font-smoothing antialiased
-    padding 30px 16px 30px 80px
-    // height 100px
-    // line-height 100px
-    // padding-left 80px
-    border none
-    border-radius 0
+  width 100%
+  font-size 40px
+  outline none
+  box-sizing border-box
+  padding 30px 16px 30px 100px
+  border 0
+  margin 0
+  border-radius 0
+  border-bottom 1px solid #ddd;/* no */  
 </style>
