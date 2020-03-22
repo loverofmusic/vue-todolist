@@ -8,7 +8,7 @@
       @keyup.enter="addTodo"
     />
     <Item :todo="t" v-for="t in todos" :key="t.id" @del="deleteTodo" />
-    <Tab :filter="filter"></Tab>
+    <Tab :filter="filter" :todoLists="todos"></Tab>
   </section>
 </template>
 
@@ -32,7 +32,7 @@ export default {
       // console.log(e.target.value)
       this.todos.unshift({
         id: id++,
-        content: e.target.value,
+        content: e.target.value.trim(),
         completed: false
       });
       e.target.value = "";
